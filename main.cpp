@@ -4,9 +4,7 @@
 #include <unistd.h>
 const float pi = 3.14159265359;
 
-/*
- * g++ -o main_v2 main_v2.cpp -lsfml-graphics -lsfml-window -lsfml-system && ./main_v2
-*/
+
 int main(){
 	int fps = 30;
 	int secondes = 1;
