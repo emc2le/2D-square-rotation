@@ -2,7 +2,12 @@
 #include <cmath>
 #include <SFML/Graphics.hpp>
 #include <unistd.h>
+
 const float pi = 3.14159265359;
+
+// repeted lines
+#define _x(i) (coordone_depart_X[i] * cos(current_angle)) - (coordone_depart_Y[i] * sin(current_angle))
+#define _y(i) (coordone_depart_X[i] * sin(current_angle)) + (coordone_depart_Y[i] * cos(current_angle))
 
 
 int main(){
@@ -28,17 +33,17 @@ int main(){
 	
 		float current_angle = (2 * pi) * ((float)(i+1)/(float)(number_of_frames));
 
-		X1_total[i] = (coordone_depart_X[0] * cos(current_angle)) - (coordone_depart_Y[0] * sin(current_angle));
-		Y1_total[i] = (coordone_depart_X[0] * sin(current_angle)) + (coordone_depart_Y[0] * cos(current_angle));
+		X1_total[i] = _x(0);
+		Y1_total[i] = _y(0);
 
-		X2_total[i] = (coordone_depart_X[1] * cos(current_angle)) - (coordone_depart_Y[1] * sin(current_angle));
-		Y2_total[i] = (coordone_depart_X[1] * sin(current_angle)) + (coordone_depart_Y[1] * cos(current_angle));
+		X2_total[i] = _x(1);
+		Y2_total[i] = _y(1);
 
-		X3_total[i] = (coordone_depart_X[2] * cos(current_angle)) - (coordone_depart_Y[2] * sin(current_angle));
-		Y3_total[i] = (coordone_depart_X[2] * sin(current_angle)) + (coordone_depart_Y[2] * cos(current_angle));
+		X3_total[i] = _x(2);
+		Y3_total[i] = _y(2);
 
-		X4_total[i] = (coordone_depart_X[3] * cos(current_angle)) - (coordone_depart_Y[3] * sin(current_angle));
-		Y4_total[i] = (coordone_depart_X[3] * sin(current_angle)) + (coordone_depart_Y[3] * cos(current_angle));
+		X4_total[i] = _x(3);
+		Y4_total[i] = _y(3);
 
 	}
 
